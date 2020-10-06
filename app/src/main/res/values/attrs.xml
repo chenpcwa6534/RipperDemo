@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="LayoutRecyclerView">
+        <attr name="mode" format="enum">
+            <enum name="vertical" value="0"/>
+            <enum name="horizontal" value="1"/>
+            <enum name="grid" value="2"/>
+        </attr>
+        <attr name="grid_column" format="integer"/>
+    </declare-styleable>
+</resources>

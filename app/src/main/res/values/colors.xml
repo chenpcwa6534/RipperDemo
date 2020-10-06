@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#6200EE</color>
+    <color name="colorPrimaryDark">#3700B3</color>
+    <color name="colorAccent">#03DAC5</color>
+
+    <color name="primary">#202125</color>
+    
+    <color name="bg_wide_button">#626570</color>
+    <color name="bg_device_connected">#32343A</color>
+    <color name="bg_device_unconnected">#151515</color>
+</resources>

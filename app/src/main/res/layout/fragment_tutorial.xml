@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="viewModel"
+            type="com.example.dexlight.ui.tutorial.vm.Submitter" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.main.view.MainFragment"
+        android:background="@color/primary">
+
+        <com.example.lib.image.slidesview.SlidesView
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            bind:tutorial_list="@{viewModel.tutorialList}"
+            bind:tutorial_title_list="@{viewModel.tutorialTitleList}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toTopOf="@id/btn_skip"/>
+
+        <Button
+            style="@style/WideButtonTheme"
+            android:id="@+id/btn_skip"
+            android:layout_width="0dp"
+            android:layout_height="@dimen/btn_height"
+            android:layout_marginBottom="@dimen/wide_btn_margin_horizontal"
+            android:layout_marginRight="@dimen/wide_btn_margin_vertical"
+            android:layout_marginLeft="@dimen/wide_btn_margin_vertical"
+            android:text="@string/btn_skip"
+            android:onClick="@{viewModel.onClickListener}"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

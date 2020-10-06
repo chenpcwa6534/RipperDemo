@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/tutorial"
+    app:startDestination="@id/tutorialFragment">
+
+    <fragment
+        android:id="@+id/tutorialFragment"
+        android:name="com.example.dexlight.ui.tutorial.view.TutorialFragment"
+        android:label="TutorialFragment"
+        tools:layout="@layout/fragment_tutorial">
+        <action
+            android:id="@+id/action_tutorialFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.dexlight.ui.welcome.view.WelcomeFragment"
+        android:label="WelcomeFragment"
+        tools:layout="@layout/fragment_welcome" />
+
+    <activity
+        android:id="@+id/mainActivity"
+        android:name="com.example.dexlight.MainActivity"
+        android:label="MainActivity" />
+
+
+</navigation>

@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:bind="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="data"
+            type="com.example.dexlight.ui.main.model.bean.Room" />
+        <variable
+            name="onClick"
+            type="com.example.dexlight.ui.main.adapter.DeviceAdapter.OnClickListener" />
+        <variable
+            name="onSwitch"
+            type="com.example.dexlight.ui.main.adapter.DeviceAdapter.OnSwitchListener" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/primary">
+
+        <TextView
+            android:id="@+id/txt_header"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="@dimen/margin_vertical"
+            android:layout_marginTop="@dimen/margin_vertical"
+            android:textColor="@android:color/white"
+            android:textSize="17sp"
+            android:text="@{data.name}"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            tools:text="ALL"/>
+
+        <com.example.dexlight.widget.LayoutRecyclerView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/txt_header"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:mode="horizontal"
+            bind:adapter_data_device="@{data.devices}"
+            bind:adapter_onClick="@{onClick}"
+            bind:adapter_onSwitch="@{onSwitch}"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

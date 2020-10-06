@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">DexLight</string>
+
+    <string name="tutorial_title_a">新增裝置</string>
+    <string name="tutorial_title_b">連結裝置</string>
+    <string name="tutorial_title_c">燈具控制</string>
+    <string name="tutorial_title_d">新增情境</string>
+    <string name="tutorial_title_e">定時任務</string>
+
+    <string name="header_welcome">歡迎使用</string>
+    <string name="welcome_content">德克斯DEXLIGHT智能檯燈，可用APP隨意變換燈光色溫、亮度及顏色，可遠端遙控、預設時間及語音控制開關。</string>
+
+    <string name="btn_skip">略過</string>
+    <string name="btn_search">搜尋設備</string>
+
+    <string name="header_home">HOME</string>
+
+    <string name="btn_add_device">新增裝置</string>
+    
+    <string name="mode_normal">一般模式</string>
+    <string name="mode_saving">省電模式</string>
+    <string name="mode_sun">日光模式</string>
+    <string name="mode_read">閱讀模式</string>
+    <string name="mode_digit">數理模式</string>
+    <string name="mode_custom_1">自訂模式1</string>
+    <string name="mode_custom_2">自訂模式2</string>
+    <string name="mode_custom_3">自訂模式3</string>
+</resources>
