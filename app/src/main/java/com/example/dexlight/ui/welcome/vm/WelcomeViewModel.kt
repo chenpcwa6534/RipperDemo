@@ -20,6 +20,10 @@ class WelcomeViewModel constructor(application: Application, context: Context, v
             WelcomeViewModel(application, context, model, navController)
     }
 
+    override fun setArgsTitle(title: String?) {
+        this.submitter.title.value = title
+    }
+
     override fun getSubmitter(): Submitter = this.submitter
 
     init {

@@ -8,6 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.navigation.Navigation
 import com.example.lib.components.AnnotationParse
+import com.example.lib.permission.PermissionManager
 import java.lang.RuntimeException
 
 open class ActivityRigger : AppCompatActivity(){
@@ -28,10 +29,15 @@ open class ActivityRigger : AppCompatActivity(){
         this.setContentView(this.binding.root)
     }
 
-    fun transActivity(id: Int){
+    override fun onRequestPermissionsResult(requestCode: Int, permissions: Array<out String>, grantResults: IntArray) {
+        super.onRequestPermissionsResult(requestCode, permissions, grantResults)
+        PermissionManager.onRequestPermissionResult(this, requestCode, permissions, grantResults)
+    }
+
+    fun transActivity(id: Int, args: Bundle? = null){
         try {
             val navHostId = AnnotationParse.getAnnotatedNavHost(this)
-            Navigation.findNavController(this, navHostId).navigate(id)
+            Navigation.findNavController(this, navHostId).navigate(id, args)
         }catch (e: RuntimeException){
             Log.e(TAG, "Can't not find navhostFragment ${e.message}")
         }

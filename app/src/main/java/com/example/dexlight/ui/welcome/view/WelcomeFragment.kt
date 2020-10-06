@@ -2,6 +2,7 @@ package com.example.dexlight.ui.welcome.view
 
 import android.os.Bundle
 import android.view.View
+import androidx.navigation.NavArgs
 import com.example.dexlight.BR
 import com.example.dexlight.R
 import com.example.dexlight.base.BaseFragment
@@ -33,5 +34,8 @@ class WelcomeFragment : BaseFragment(), KodeinAware {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         this.binding.setVariable(BR.viewModel, this.viewModel.getSubmitter())
+
+        val args = WelcomeFragmentArgs.fromBundle(this.arguments!!)
+        this.viewModel.setArgsTitle(args.title)
     }
 }

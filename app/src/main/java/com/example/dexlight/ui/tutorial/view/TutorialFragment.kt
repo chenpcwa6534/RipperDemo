@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.webkit.WebChromeClient
 import org.kodein.di.Kodein
 import org.kodein.di.KodeinAware
 import org.kodein.di.KodeinContext
@@ -17,6 +18,8 @@ import com.example.dexlight.R
 import com.example.dexlight.base.BaseFragment
 import com.example.dexlight.di.tutorialModule
 import com.example.dexlight.ui.tutorial.Contract
+import com.example.dexlight.ui.welcome.view.WelcomeFragmentArgs
+import kotlinx.android.synthetic.main.fragment_tutorial.*
 
 @LayoutId(R.layout.fragment_tutorial)
 class TutorialFragment : BaseFragment(), KodeinAware {

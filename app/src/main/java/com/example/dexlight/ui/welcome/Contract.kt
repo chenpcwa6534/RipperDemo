@@ -9,6 +9,6 @@ class Contract {
     }
 
     interface ViewModelImpl: BaseViewModelImpl<Submitter>{
-
+        fun setArgsTitle(title: String?)
     }
 }

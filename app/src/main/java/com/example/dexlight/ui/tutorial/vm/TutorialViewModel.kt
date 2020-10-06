@@ -9,6 +9,7 @@ import androidx.navigation.NavController
 import com.example.dexlight.R
 import com.example.dexlight.base.BaseViewModel
 import com.example.dexlight.ui.tutorial.Contract
+import com.example.dexlight.ui.tutorial.view.TutorialFragmentDirections
 
 class TutorialViewModel constructor(application: Application, context: Context, val model: Contract.ModelImpl, navController: NavController) : BaseViewModel(application, context, navController), Contract.ViewModelImpl, View.OnClickListener {
 
@@ -27,7 +28,14 @@ class TutorialViewModel constructor(application: Application, context: Context, 
 
     override fun onClick(view: View?) {
         when(view!!.id){
-            R.id.btn_skip -> this.transFragment(R.id.action_tutorialFragment_to_welcomeFragment)
+            R.id.btn_skip ->{
+                //Need args
+                val action = TutorialFragmentDirections.actionTutorialFragmentToWelcomeFragment("title")
+                this.transFragment(action)
+
+                //No args
+//                this.transFragment(R.id.action_tutorialFragment_to_welcomeFragment)
+            }
         }
     }
 
